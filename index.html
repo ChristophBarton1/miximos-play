@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <!-- YouTube Playables SDK script tag is injected in the "playables" build mode (vite.config.ts); not loaded in local dev. -->
+    <title>Miximos</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #0a0818; overflow: hidden; }
+      canvas { display: block; touch-action: none; }
+      /* Loading screen (shown with firstFrameReady, removed at gameReady). Language-neutral on purpose. */
+      #boot { position: fixed; inset: 0; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+        background: radial-gradient(circle at 50% 45%, #2a1f5c 0%, #0a0818 70%); transition: opacity .4s ease; }
+      #boot.done { opacity: 0; pointer-events: none; }
+      #boot .word { font: 800 34px/1 system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing: .04em; color: #e6b84a; text-shadow: 0 0 18px rgba(230, 184, 74, .45); }
+      #boot .ring { width: 44px; height: 44px; border-radius: 50%; border: 4px solid rgba(230, 184, 74, .2); border-top-color: #e6b84a; animation: spin 0.9s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+    <script type="module" crossorigin src="./assets/index-BLka80x5.js"></script>
+  </head>
+  <body>
+    <div id="boot" role="progressbar" aria-label="Loading"><div class="word">Miximos</div><div class="ring"></div></div>
+  </body>
+</html>
